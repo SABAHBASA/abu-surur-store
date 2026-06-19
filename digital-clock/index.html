@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock - Multi Timezone ⛰️</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <h1><i class="fas fa-clock"></i> World Clock</h1>
+        <p class="subtitle">Time zones around the world</p>
+      </div>
+
+      <div class="header-controls">
+        <button id="formatToggle" class="control-btn" title="Toggle 12/24 hour format">
+          <i class="fas fa-hourglass-half"></i> <span>12H</span>
+        </button>
+        <button id="themeToggle" class="control-btn" title="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Display -->
+    <main class="main-content">
+      <!-- Add Timezone Section -->
+      <div class="add-timezone-section">
+        <div class="search-container">
+          <input 
+            type="text" 
+            id="timezoneSearch" 
+            class="timezone-search" 
+            placeholder="Search timezones... (e.g., New York, Tokyo, London)"
+          >
+          <button id="addTimezoneBtn" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Add Timezone
+          </button>
+        </div>
+
+        <!-- Timezone Dropdown -->
+        <div id="timezoneDropdown" class="timezone-dropdown" style="display: none;">
+          <div class="dropdown-header">
+            <h3>Select a Timezone</h3>
+            <button id="closeDropdown" class="close-btn">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div id="dropdownList" class="dropdown-list"></div>
+        </div>
+      </div>
+
+      <!-- Clock Cards Grid -->
+      <div id="clocksGrid" class="clocks-grid">
+        <!-- Clock cards will be inserted here -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <i class="fas fa-globe"></i>
+        <h2>No timezones selected</h2>
+        <p>Add a timezone to get started</p>
+        <button class="btn btn-primary" onclick="openTimezoneSelector()">
+          <i class="fas fa-plus"></i> Add First Timezone
+        </button>
+      </div>
+    </main>
+
+    <!-- Stats Footer -->
+    <footer class="footer">
+      <div class="stats">
+        <div class="stat">
+          <i class="fas fa-globe"></i>
+          <span>Timezones: <strong id="timezoneCount">0</strong></span>
+        </div>
+        <div class="stat">
+          <i class="fas fa-clock"></i>
+          <span>UTC Offset: <strong id="utcOffset">+00:00</strong></span>
+        </div>
+        <div class="stat">
+          <i class="fas fa-calendar-alt"></i>
+          <span id="currentDate">-</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="timezones.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

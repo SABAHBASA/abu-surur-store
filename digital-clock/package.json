@@ -1,0 +1,20 @@
+{
+  "name": "digital-clock",
+  "version": "1.0.0",
+  "description": "Digital clock displaying time in multiple timezones",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8000",
+    "dev": "http-server -p 8000 -c-1"
+  },
+  "keywords": [
+    "clock",
+    "timezone",
+    "time",
+    "digital",
+    "world-clock",
+    "intl"
+  ],
+  "author": "Abu Surur",
+  "license": "MIT"
+}
