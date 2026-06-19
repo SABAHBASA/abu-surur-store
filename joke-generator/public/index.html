@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Joke Generator 😂</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>😂 Random Joke Generator</h1>
+      <p>Get a laugh with random jokes from the internet!</p>
+      <button id="themeToggle" class="theme-toggle" title="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </header>
+
+    <main>
+      <div class="controls">
+        <div class="button-group">
+          <button id="randomBtn" class="btn btn-primary">
+            <i class="fas fa-dice"></i> Random Joke
+          </button>
+          <button id="programmingBtn" class="btn btn-secondary">
+            <i class="fas fa-code"></i> Programming
+          </button>
+          <button id="dadBtn" class="btn btn-secondary">
+            <i class="fas fa-user-tie"></i> Dad Joke
+          </button>
+          <button id="knockBtn" class="btn btn-secondary">
+            <i class="fas fa-door-open"></i> Knock-Knock
+          </button>
+        </div>
+
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search for jokes...">
+          <button id="searchBtn" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="joke-container">
+        <div class="loading" id="loading">
+          <i class="fas fa-spinner fa-spin"></i> Loading...
+        </div>
+
+        <div class="joke-display" id="jokeDisplay" style="display: none;">
+          <div class="joke-content">
+            <div class="joke-setup" id="jokeSetup"></div>
+            <div class="joke-punchline" id="jokePunchline"></div>
+            <div class="joke-source" id="jokeSource"></div>
+          </div>
+
+          <div class="joke-actions">
+            <button id="copyBtn" class="action-btn" title="Copy to clipboard">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+            <button id="shareBtn" class="action-btn" title="Share">
+              <i class="fas fa-share-alt"></i> Share
+            </button>
+            <button id="likeBtn" class="action-btn" title="Like">
+              <i class="fas fa-heart"></i> Like
+            </button>
+          </div>
+        </div>
+
+        <div class="error-display" id="errorDisplay" style="display: none;">
+          <i class="fas fa-exclamation-circle"></i>
+          <p id="errorMessage"></p>
+          <button class="btn btn-primary" onclick="fetchRandomJoke()">
+            Try Again
+          </button>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-label">Jokes Loaded:</span>
+          <span class="stat-value" id="jokesLoaded">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Likes:</span>
+          <span class="stat-value" id="likesCount">0</span>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Built with ❤️ by Abu Surur Store | Using free joke APIs</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
